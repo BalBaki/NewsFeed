@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --newsPerRow: 1;
+    --newsItemGap: 0.5rem;
+}
+
+.news-list {
+    gap: var(--newsItemGap);
+    margin: 0.5rem 0 0.5rem calc(var(--newsItemGap));
+}
+
+.news-item {
+    width: calc(calc(100% / var(--newsPerRow)) - var(--newsItemGap));
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+    :root {
+        --newsPerRow: 2;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+    :root {
+        --newsPerRow: 3;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1499px) {
+    :root {
+        --newsPerRow: 4;
+    }
+}
+
+@media (min-width: 1500px) {
+    :root {
+        --newsPerRow: 5;
+    }
+}
